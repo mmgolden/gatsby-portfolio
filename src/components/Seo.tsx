@@ -19,10 +19,15 @@ interface Props {
   description?: string;
   lang?: string;
   meta?: Meta[];
-  title: string;
+  title?: string;
 }
 
-export const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
+export const SEO: React.FC<Props> = ({
+  description,
+  lang,
+  meta = [],
+  title,
+}) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -37,6 +42,7 @@ export const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
     `
   );
 
+  const metaTitle = title || site.siteMetadata.title;
   const metaDescription = description || site.siteMetadata.description;
 
   return (
@@ -46,6 +52,7 @@ export const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      defaultTitle={site.siteMetadata.title}
       meta={[
         {
           name: `description`,
@@ -53,7 +60,7 @@ export const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
         },
         {
           property: `og:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           property: `og:description`,
@@ -73,13 +80,13 @@ export const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta || [])}
+      ].concat(meta)}
     />
   );
 };
