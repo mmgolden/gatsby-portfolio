@@ -5,6 +5,7 @@ module.exports = {
     author: `@mmgolden`,
   },
   plugins: [
+    `gatsby-plugin-emotion`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
     {
@@ -16,6 +17,14 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: `${__dirname}/src/assets`,
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
