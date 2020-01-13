@@ -22,7 +22,9 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "react-scroll": "^1.7.15"
+    "react-scroll": "^1.7.15",
+    "typeface-open-sans": "^0.0.75",
+    "typeface-playfair-display": "^0.0.72"
   },
   "devDependencies": {
     "@types/node": "^13.1.4",
