@@ -1,12 +1,32 @@
+/** @jsx jsx */
 import React from 'react';
+import { jsx } from '@emotion/core';
 import { SEO } from '../components/Seo';
 import { Layout } from '../components/Layout';
+import { Theme } from '../base/theme';
 
 const IndexPage: React.FC = () => (
   <Layout>
     <SEO />
-    <h1>This is the homepage</h1>
+    <div css={styles.hero}>
+      <h1>This is the homepage</h1>
+    </div>
   </Layout>
 );
+
+const styles = {
+  hero: (theme: Theme) => ({
+    display: 'flex',
+    background: theme.colors.primary,
+    height: '50vh',
+    '& h1': {
+      margin: 0,
+    },
+    '@media (min-width:767px)': {
+      height: '100vh',
+      marginLeft: '72px',
+    },
+  }),
+};
 
 export default IndexPage;
