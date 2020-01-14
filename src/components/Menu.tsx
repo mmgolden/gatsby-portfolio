@@ -12,7 +12,7 @@ interface Props {
 
 export const Menu: React.FC<Props> = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
-    <div css={styles.menuContainer}>
+    <div css={isMenuOpen ? styles.menuOpen : styles.menuClosed}>
       <Logo css={styles.logo} />
       <ul css={styles.menu}>
         <li>
@@ -33,20 +33,36 @@ export const Menu: React.FC<Props> = ({ isMenuOpen, setIsMenuOpen }) => {
 };
 
 const styles = {
-  menuContainer: (theme: Theme) => ({
+  menuOpen: (theme: Theme) => ({
     background: theme.colors.white,
     position: 'absolute' as const,
+    height: '100vh',
+    padding: '32px 62px',
+    transition: 'transform 0.5s ease-in-out',
+    width: '100%',
     top: '52px',
     left: 0,
-    width: '100%',
-    padding: '32px 62px',
-    height: '100vh',
-    transition: 'transform 0.3s ease-in-out',
     '@media (min-width:767px)': {
-      position: 'absolute' as const,
       top: 0,
       left: '72px',
-      width: '250px',
+      width: '200px',
+    },
+  }),
+  menuClosed: (theme: Theme) => ({
+    background: theme.colors.white,
+    position: 'absolute' as const,
+    height: '100vh',
+    padding: '32px 62px',
+    transition: 'transform 0.5s ease-in-out',
+    width: '100%',
+    top: 0,
+    left: 0,
+    transform: 'translateY(-100%)' as const,
+    '@media (min-width:767px)': {
+      top: 0,
+      left: '72px',
+      width: '200px',
+      transform: 'translateX(-100%)' as const,
     },
   }),
   logo: {

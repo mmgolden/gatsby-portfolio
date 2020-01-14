@@ -12,13 +12,15 @@ export const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav css={styles.navbar}>
-      <Link to="/" aria-label="Logo">
-        <Logo css={styles.logo} />
-      </Link>
-      <Burger isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+    <nav>
+      <div css={styles.navbar}>
+        <Link to="/" aria-label="Logo">
+          <Logo css={styles.logo} />
+        </Link>
+        <Burger isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+        <Social />
+      </div>
       <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <Social />
     </nav>
   );
 };
