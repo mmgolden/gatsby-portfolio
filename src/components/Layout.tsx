@@ -27,6 +27,6 @@ const styles = {
     },
   },
   main: {
-    width: '100%',
+    flex: 1,
   },
 };

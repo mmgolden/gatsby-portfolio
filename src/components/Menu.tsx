@@ -39,9 +39,9 @@ const styles = {
     height: '100vh',
     padding: '32px 62px',
     transition: 'transform 0.5s ease-in-out',
-    width: '100%',
     top: '52px',
     left: 0,
+    right: 0,
     '@media (min-width:767px)': {
       top: 0,
       left: '72px',
@@ -80,6 +80,9 @@ const styles = {
     color: theme.colors.heading,
     '& li': {
       marginBottom: '32px',
+    },
+    '& li a': {
+      transition: 'color 0.3s',
     },
     '& li a:hover': {
       color: theme.colors.primary,

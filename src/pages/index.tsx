@@ -19,11 +19,13 @@ const styles = {
     display: 'flex',
     background: theme.colors.primary,
     height: '50vh',
+    marginTop: '52px',
     '& h1': {
       margin: 0,
     },
     '@media (min-width:767px)': {
       height: '100vh',
+      marginTop: 0,
       marginLeft: '72px',
     },
   }),

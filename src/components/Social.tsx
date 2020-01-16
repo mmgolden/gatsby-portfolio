@@ -51,8 +51,9 @@ const styles = {
       width: '24px',
       height: 'auto',
       padding: '4px',
+      transition: 'opacity 0.3s',
       '&:hover': {
-        opacity: 0.5,
+        opacity: 0.6,
       },
     },
     '@media (min-width:767px)': {
