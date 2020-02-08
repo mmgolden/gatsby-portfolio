@@ -20,12 +20,13 @@ export const Layout: React.FC = ({ children }) => {
 const styles = {
   wrapper: {
     display: 'flex',
-    flexDirection: 'column' as const,
-    boxSizing: 'border-box' as const,
+    flexDirection: 'column',
+    boxSizing: 'border-box',
+    fontSize: '16px',
     '@media (min-width:767px)': {
-      flexDirection: 'row' as const,
+      flexDirection: 'row',
     },
-  },
+  } as const,
   main: {
     flex: 1,
   },

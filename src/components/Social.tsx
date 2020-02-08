@@ -16,7 +16,7 @@ export const Social: React.FC = () => {
           rel="noopener noreferrer"
           aria-label="Github"
         >
-          <Github />
+          <Github css={styles.icon} />
         </a>
       </li>
       <li>
@@ -26,7 +26,7 @@ export const Social: React.FC = () => {
           rel="noopener noreferrer"
           aria-label="Linkedin"
         >
-          <Linkedin />
+          <Linkedin css={styles.icon} />
         </a>
       </li>
       <li>
@@ -36,7 +36,7 @@ export const Social: React.FC = () => {
           rel="noopener noreferrer"
           aria-label="Twitter"
         >
-          <Twitter />
+          <Twitter css={styles.icon} />
         </a>
       </li>
     </ul>
@@ -44,22 +44,22 @@ export const Social: React.FC = () => {
 };
 
 const styles = {
-  social: (theme: Theme) => ({
+  social: {
     display: 'none',
-    '& svg': {
-      fill: theme.colors.primary,
-      width: '24px',
-      height: 'auto',
-      padding: '4px',
-      transition: 'opacity 0.3s',
-      '&:hover': {
-        opacity: 0.6,
-      },
-    },
     '@media (min-width:767px)': {
       display: 'block',
       listStyle: 'none',
       paddingLeft: 0,
+    },
+  },
+  icon: (theme: Theme) => ({
+    fill: theme.colors.primary,
+    width: '24px',
+    height: 'auto',
+    padding: '4px',
+    transition: 'opacity 0.3s',
+    '&:hover': {
+      opacity: 0.6,
     },
   }),
 };

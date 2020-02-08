@@ -34,6 +34,7 @@ const styles = {
     width: '32px',
     height: '32px',
     outline: 'none',
+    cursor: 'pointer',
     '@media (min-width:767px)': {
       marginBottom: 'auto',
       marginTop: '32px',

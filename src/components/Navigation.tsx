@@ -26,27 +26,28 @@ export const Navigation: React.FC = () => {
 };
 
 const styles = {
-  navbar: (theme: Theme) => ({
-    display: 'flex',
-    background: theme.colors.white,
-    height: '52px',
-    alignItems: 'center',
-    zIndex: 999,
-    padding: '0 12px',
-    justifyContent: 'space-between',
-    position: 'absolute' as const,
-    top: 0,
-    left: 0,
-    right: 0,
-    '@media (min-width:767px)': {
-      flexDirection: 'column' as const,
-      width: '72px',
-      height: '100vh',
-      right: 'auto',
-      bottom: 0,
-      padding: 0,
-    },
-  }),
+  navbar: (theme: Theme) =>
+    ({
+      display: 'flex',
+      background: theme.colors.white,
+      height: '52px',
+      alignItems: 'center',
+      zIndex: 999,
+      padding: '0 12px',
+      justifyContent: 'space-between',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      '@media (min-width:767px)': {
+        flexDirection: 'column',
+        width: '72px',
+        height: '100vh',
+        right: 'auto',
+        bottom: 0,
+        padding: 0,
+      },
+    } as const),
   logo: {
     width: '32px',
     '@media (min-width: 767px)': {
