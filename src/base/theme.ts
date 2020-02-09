@@ -6,6 +6,7 @@ export const theme = Object.freeze({
     white: '#ffffff',
     primary: '#3AC0C8',
     heading: '#333333',
+    primaryFont: '#777777',
   },
   fonts: {
     heading: ['serif', 'Playfair Display'],

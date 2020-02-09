@@ -15,6 +15,7 @@ export const Social: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Github"
+          css={styles.link}
         >
           <Github css={styles.icon} />
         </a>
@@ -25,6 +26,7 @@ export const Social: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Linkedin"
+          css={styles.link}
         >
           <Linkedin css={styles.icon} />
         </a>
@@ -35,6 +37,7 @@ export const Social: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Twitter"
+          css={styles.link}
         >
           <Twitter css={styles.icon} />
         </a>
@@ -52,14 +55,20 @@ const styles = {
       paddingLeft: 0,
     },
   },
+  link: (theme: Theme) => ({
+    outline: 'none',
+    '&:focus': {
+      outline: `1px solid ${theme.colors.primary}`,
+    },
+  }),
   icon: (theme: Theme) => ({
     fill: theme.colors.primary,
     width: '24px',
     height: 'auto',
     padding: '4px',
-    transition: 'opacity 0.3s',
-    '&:hover': {
-      opacity: 0.6,
+    transition: 'fill 0.3s',
+    '&:hover, &:focus': {
+      fill: theme.colors.primaryFont,
     },
   }),
 };

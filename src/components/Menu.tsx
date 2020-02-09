@@ -98,7 +98,7 @@ const styles = {
   menuLink: (theme: Theme) => ({
     transition: 'color 0.3s',
     cursor: 'pointer',
-    '&:hover': {
+    '&:hover, &:focus': {
       color: theme.colors.primary,
     },
   }),

@@ -13,7 +13,10 @@ export const Burger: React.FC<Props> = ({ isMenuOpen, setIsMenuOpen }) => {
     <button
       type="button"
       aria-label="Toggle navigation"
-      css={[styles.button, isMenuOpen ? styles.close : styles.burger]}
+      css={(theme: Theme) => ({
+        ...styles.button(theme),
+        ...(isMenuOpen ? styles.close : styles.burger),
+      })}
       onClick={() => setIsMenuOpen(!isMenuOpen)}
     >
       <span css={styles.line} />
@@ -24,22 +27,26 @@ export const Burger: React.FC<Props> = ({ isMenuOpen, setIsMenuOpen }) => {
 };
 
 const styles = {
-  button: {
-    background: 'transparent',
-    border: 'none',
-    display: 'flex',
-    flexDirection: 'column' as const,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '32px',
-    height: '32px',
-    outline: 'none',
-    cursor: 'pointer',
-    '@media (min-width:767px)': {
-      marginBottom: 'auto',
-      marginTop: '32px',
-    },
-  },
+  button: (theme: Theme) =>
+    ({
+      background: 'transparent',
+      border: 'none',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '32px',
+      height: '32px',
+      outline: 'none',
+      cursor: 'pointer',
+      '&:focus': {
+        outline: `1px solid ${theme.colors.primary}`,
+      },
+      '@media (min-width:767px)': {
+        marginBottom: 'auto',
+        marginTop: '32px',
+      },
+    } as const),
   burger: {
     '& span:first-child': {
       width: '16px',
