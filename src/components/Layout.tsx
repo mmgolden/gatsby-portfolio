@@ -5,6 +5,7 @@ import './normalize.css';
 import { ThemeProvider } from 'emotion-theming';
 import { Navigation } from './Navigation';
 import { theme } from '../base/theme';
+import './layout.css';
 
 export const Layout: React.FC = ({ children }) => {
   return (
@@ -21,8 +22,7 @@ const styles = {
   wrapper: {
     display: 'flex',
     flexDirection: 'column',
-    boxSizing: 'border-box',
-    fontSize: '16px',
+    height: '100vh',
     '@media (min-width:767px)': {
       flexDirection: 'row',
     },

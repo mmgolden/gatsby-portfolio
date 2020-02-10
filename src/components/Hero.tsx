@@ -2,12 +2,10 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import { Theme } from '../base/theme';
-import Logo from '../assets/logo-light.svg';
 
 export const Hero: React.FC = () => {
   return (
     <div css={styles.hero}>
-      <Logo css={styles.logo} />
       <div css={styles.content}>
         <h1 css={styles.heroTitle}>Hi! My name is Melinda Golden.</h1>
         <p css={styles.heroText}>
@@ -22,30 +20,22 @@ const styles = {
   hero: (theme: Theme) =>
     ({
       display: 'flex',
-      background: theme.colors.primary,
-      height: '50vh',
+      backgroundColor: theme.colors.primary,
+      height: '50%',
       marginTop: '52px',
       padding: '12px',
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
       '@media (min-width:767px)': {
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
         alignItems: 'flex-start',
-        height: '100vh',
+        height: '100%',
         marginTop: 0,
         marginLeft: '72px',
         padding: '32px 62px',
       },
     } as const),
-  logo: {
-    display: 'none',
-    '@media (min-width:767px)': {
-      display: 'block',
-      width: '40px',
-      marginBottom: '150px',
-    },
-  },
   content: (theme: Theme) => ({
     color: theme.colors.white,
     '@media (min-width:767px)': {

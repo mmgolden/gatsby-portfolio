@@ -55,20 +55,15 @@ const styles = {
       paddingLeft: 0,
     },
   },
-  link: (theme: Theme) => ({
+  link: {
     outline: 'none',
-    '&:focus': {
-      outline: `1px solid ${theme.colors.primary}`,
-    },
-  }),
+    display: 'block',
+    padding: '4px',
+  },
   icon: (theme: Theme) => ({
     fill: theme.colors.primary,
     width: '24px',
     height: 'auto',
-    padding: '4px',
     transition: 'fill 0.3s',
-    '&:hover, &:focus': {
-      fill: theme.colors.primaryFont,
-    },
   }),
 };

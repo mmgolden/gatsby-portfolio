@@ -42,16 +42,13 @@ const styles = {
       '@media (min-width:767px)': {
         flexDirection: 'column',
         width: '72px',
-        height: '100vh',
         right: 'auto',
         bottom: 0,
-        padding: 0,
+        padding: '32px 0',
+        height: '100%',
       },
     } as const),
   logo: {
     width: '32px',
-    '@media (min-width: 767px)': {
-      display: 'none',
-    },
   },
 };

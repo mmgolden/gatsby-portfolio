@@ -3,7 +3,6 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { Link } from 'react-scroll';
 import { Theme } from '../base/theme';
-import Logo from '../assets/logo-dark.svg';
 
 interface Props {
   isMenuOpen: boolean;
@@ -13,7 +12,6 @@ interface Props {
 export const Menu: React.FC<Props> = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <div css={isMenuOpen ? styles.menuOpen : styles.menuClosed}>
-      <Logo css={styles.logo} />
       <ul css={styles.menu}>
         <li css={styles.menuItem}>
           <Link to="/" css={styles.menuLink}>
@@ -54,7 +52,7 @@ const styles = {
       '@media (min-width:767px)': {
         top: 0,
         left: '72px',
-        width: '200px',
+        width: '360px',
       },
     } as const),
   menuClosed: (theme: Theme) =>
