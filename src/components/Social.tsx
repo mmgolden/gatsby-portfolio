@@ -59,11 +59,14 @@ const styles = {
     outline: 'none',
     display: 'block',
     padding: '4px',
+    '&:hover svg': {
+      transform: 'scale(1.2)',
+    },
   },
   icon: (theme: Theme) => ({
     fill: theme.colors.primary,
     width: '24px',
     height: 'auto',
-    transition: 'fill 0.3s',
+    transition: 'all 0.3s',
   }),
 };
