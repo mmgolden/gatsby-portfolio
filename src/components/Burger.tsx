@@ -44,28 +44,28 @@ const styles = {
     },
   } as const,
   burger: {
-    '& span:first-child': {
+    '& span:first-of-type, & span:nth-of-type(3)': {
       width: '16px',
     },
-    '& span:nth-child(2)': {
+    '& span:nth-of-type(2)': {
       width: '32px',
       marginTop: '8px',
       marginBottom: '8px',
     },
-    '& span:nth-child(3)': {
-      width: '16px',
+    '&:hover span:first-of-type, &:hover span:nth-of-type(3)': {
+      width: '32px',
     },
   },
   close: {
-    '& span:first-child': {
+    '& span:first-of-type': {
       width: '32px',
       transform: 'rotate(45deg)',
     },
-    '& span:nth-child(2)': {
+    '& span:nth-of-type(2)': {
       width: '32px',
       opacity: 0,
     },
-    '& span:nth-child(3)': {
+    '& span:nth-of-type(3)': {
       width: '32px',
       transform: 'rotate(-45deg)',
     },
