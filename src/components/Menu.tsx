@@ -49,6 +49,10 @@ const styles = {
       top: '52px',
       left: 0,
       right: 0,
+      zIndex: 9,
+      '& a': {
+        opacity: 1,
+      },
       '@media (min-width:767px)': {
         top: 0,
         left: '72px',
@@ -66,6 +70,10 @@ const styles = {
       top: 0,
       left: 0,
       transform: 'translateY(-100%)',
+      zIndex: 9,
+      '& a': {
+        opacity: 0,
+      },
       '@media (min-width:767px)': {
         top: 0,
         left: '72px',
@@ -94,7 +102,7 @@ const styles = {
     marginBottom: '32px',
   },
   menuLink: (theme: Theme) => ({
-    transition: 'color 0.3s',
+    transition: 'opacity 0.2s, color 0.3s',
     cursor: 'pointer',
     '&:hover, &:focus': {
       color: theme.colors.primary,
