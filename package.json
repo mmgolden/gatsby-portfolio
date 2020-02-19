@@ -23,6 +23,7 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-scroll": "^1.7.15",
+    "typeface-fauna-one": "^0.0.72",
     "typeface-open-sans": "^0.0.75",
     "typeface-playfair-display": "^0.0.72"
   },

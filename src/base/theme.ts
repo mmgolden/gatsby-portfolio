@@ -1,5 +1,6 @@
 import 'typeface-open-sans';
 import 'typeface-playfair-display';
+import 'typeface-fauna-one';
 
 export const theme = Object.freeze({
   colors: {
@@ -10,7 +11,7 @@ export const theme = Object.freeze({
   },
   fonts: {
     heading: ['serif', 'Playfair Display'],
-    primary: ['sans-serif', 'Open Sans'],
+    primary: ['sans-serif', 'Fauna One'],
   },
 });
 

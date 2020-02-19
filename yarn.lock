@@ -11833,6 +11833,11 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
+typeface-fauna-one@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-fauna-one/-/typeface-fauna-one-0.0.72.tgz#8d316bba98ca27ad549b55a678622761f5d4f5fb"
+  integrity sha512-JbIYhPuSWcsOpOQDdHN64ia08hr0ic1KkAEMx6ULbS7hhpTKmAB9MqGcnzMXx+nQpNUy+zcPgwID4fepZcnICQ==
+
 typeface-open-sans@^0.0.75:
   version "0.0.75"
   resolved "https://registry.yarnpkg.com/typeface-open-sans/-/typeface-open-sans-0.0.75.tgz#20d0c330f14c0c40463c334adbedd6005389abe4"
