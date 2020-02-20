@@ -24,8 +24,8 @@ const styles = {
       display: 'flex',
       backgroundColor: theme.colors.primary,
       height: '100vh',
-      marginTop: '52px',
-      padding: '12px',
+      marginTop: '3.25rem',
+      padding: '0.75rem',
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
@@ -33,8 +33,8 @@ const styles = {
       '@media (min-width:767px)': {
         flexDirection: 'row',
         marginTop: 0,
-        marginLeft: '72px',
-        padding: '32px 62px',
+        marginLeft: '4.5rem',
+        padding: '2rem 3.875rem',
       },
     } as const),
   content: (theme: Theme) => ({
@@ -51,7 +51,7 @@ const styles = {
   heroTitle: (theme: Theme) =>
     ({
       fontFamily: theme.fonts.primary,
-      margin: '0 0 16px 0',
+      margin: '0 0 1rem 0',
       fontSize: '1.2rem',
       fontWeight: 'normal',
     } as const),

@@ -47,7 +47,7 @@ const styles = {
       background: theme.colors.white,
       position: 'absolute',
       height: '100vh',
-      padding: '32px 62px',
+      padding: '2rem 3.875rem',
       transition: 'transform 0.5s ease-in-out',
       top: '52px',
       left: 0,
@@ -69,7 +69,7 @@ const styles = {
       background: theme.colors.white,
       position: 'absolute',
       height: '100vh',
-      padding: '32px 62px',
+      padding: '2rem 3.875rem',
       transition: 'transform 0.5s ease-in-out',
       width: '100%',
       top: 0,
@@ -100,11 +100,11 @@ const styles = {
     fontSize: '2rem',
     color: theme.colors.heading,
     '@media (min-width:767px)': {
-      marginTop: '72px',
+      marginTop: '4.5rem',
     },
   }),
   menuItem: {
-    marginBottom: '32px',
+    marginBottom: '2rem',
   },
   menuLink: (theme: Theme) => ({
     transition: 'opacity 0.2s, color 0.3s',
@@ -115,7 +115,7 @@ const styles = {
   }),
   social: {
     marginTop: 'auto',
-    marginBottom: '16px',
+    marginBottom: '1rem',
     '@media (min-width:767px)': {
       display: 'none',
       marginTop: 0,

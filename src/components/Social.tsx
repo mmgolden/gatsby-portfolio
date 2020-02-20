@@ -61,12 +61,12 @@ const styles = {
   link: {
     outline: 'none',
     display: 'block',
-    padding: '16px',
+    padding: '1rem',
     '&:hover svg': {
       transform: 'scale(1.2)',
     },
     '@media (min-width:767px)': {
-      padding: '4px',
+      padding: '0.25rem',
     },
   },
   icon: (theme: Theme) => ({

@@ -40,7 +40,7 @@ const styles = {
     cursor: 'pointer',
     '@media (min-width:767px)': {
       marginBottom: 'auto',
-      marginTop: '40px',
+      marginTop: '2.5rem',
     },
   } as const,
   burger: {
@@ -49,8 +49,8 @@ const styles = {
     },
     '& span:nth-of-type(2)': {
       width: '32px',
-      marginTop: '8px',
-      marginBottom: '8px',
+      marginTop: '0.5rem',
+      marginBottom: '0.5rem',
     },
     '&:hover span:first-of-type, &:hover span:nth-of-type(3)': {
       width: '32px',
