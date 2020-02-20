@@ -22,7 +22,6 @@ const styles = {
   wrapper: {
     display: 'flex',
     flexDirection: 'column',
-    height: '100vh',
     '@media (min-width:767px)': {
       flexDirection: 'row',
     },
