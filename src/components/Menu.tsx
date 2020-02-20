@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx } from '@emotion/core';
-import { Link } from 'react-scroll';
+import { Link } from 'gatsby';
 import { Theme } from '../base/theme';
 import { Social } from './Social';
 
@@ -19,7 +19,7 @@ export const Menu: React.FC<Props> = ({ isMenuOpen }) => {
           </Link>
         </li>
         <li css={styles.menuItem}>
-          <Link to="/" css={styles.menuLink}>
+          <Link to="/about" css={styles.menuLink}>
             About
           </Link>
         </li>
@@ -93,22 +93,23 @@ const styles = {
       width: '40px',
     },
   },
-  menu: (theme: Theme) => ({
+  menu: {
     listStyle: 'none',
     paddingLeft: 0,
-    fontFamily: theme.fonts.heading,
-    fontSize: '2rem',
-    color: theme.colors.heading,
     '@media (min-width:767px)': {
       marginTop: '4.5rem',
     },
-  }),
+  },
   menuItem: {
     marginBottom: '2rem',
   },
   menuLink: (theme: Theme) => ({
     transition: 'opacity 0.2s, color 0.3s',
     cursor: 'pointer',
+    fontFamily: theme.fonts.heading,
+    fontSize: '2rem',
+    color: theme.colors.heading,
+    textDecoration: 'none',
     '&:hover, &:focus': {
       color: theme.colors.primary,
     },
