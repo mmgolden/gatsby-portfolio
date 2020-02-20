@@ -9,34 +9,37 @@ import { Theme } from '../base/theme';
 export const Social: React.FC = () => {
   return (
     <ul css={styles.social}>
-      <li>
+      <li css={styles.listItem}>
         <a
           href="https://github.com/mmgolden"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Github"
+          css={styles.link}
         >
-          <Github />
+          <Github css={styles.icon} />
         </a>
       </li>
-      <li>
+      <li css={styles.listItem}>
         <a
           href="https://www.linkedin.com/in/melindamgolden"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Linkedin"
+          css={styles.link}
         >
-          <Linkedin />
+          <Linkedin css={styles.icon} />
         </a>
       </li>
-      <li>
+      <li css={styles.listItem}>
         <a
           href="https://twitter.com/melindamgolden"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Twitter"
+          css={styles.link}
         >
-          <Twitter />
+          <Twitter css={styles.icon} />
         </a>
       </li>
     </ul>
@@ -44,22 +47,32 @@ export const Social: React.FC = () => {
 };
 
 const styles = {
-  social: (theme: Theme) => ({
-    display: 'none',
-    '& svg': {
-      fill: theme.colors.primary,
-      width: '24px',
-      height: 'auto',
-      padding: '4px',
-      transition: 'opacity 0.3s',
-      '&:hover': {
-        opacity: 0.6,
-      },
-    },
+  social: {
+    listStyle: 'none',
+    paddingLeft: 0,
+    textAlign: 'center',
+  } as const,
+  listItem: {
+    display: 'inline-block',
     '@media (min-width:767px)': {
       display: 'block',
-      listStyle: 'none',
-      paddingLeft: 0,
     },
+  },
+  link: {
+    outline: 'none',
+    display: 'block',
+    padding: '1rem',
+    '&:hover svg': {
+      transform: 'scale(1.2)',
+    },
+    '@media (min-width:767px)': {
+      padding: '0.25rem',
+    },
+  },
+  icon: (theme: Theme) => ({
+    fill: theme.colors.primary,
+    width: '24px',
+    height: 'auto',
+    transition: 'all 0.3s',
   }),
 };

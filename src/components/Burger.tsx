@@ -13,7 +13,10 @@ export const Burger: React.FC<Props> = ({ isMenuOpen, setIsMenuOpen }) => {
     <button
       type="button"
       aria-label="Toggle navigation"
-      css={[styles.button, isMenuOpen ? styles.close : styles.burger]}
+      css={{
+        ...styles.button,
+        ...(isMenuOpen ? styles.close : styles.burger),
+      }}
       onClick={() => setIsMenuOpen(!isMenuOpen)}
     >
       <span css={styles.line} />
@@ -28,40 +31,41 @@ const styles = {
     background: 'transparent',
     border: 'none',
     display: 'flex',
-    flexDirection: 'column' as const,
+    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
     width: '32px',
     height: '32px',
     outline: 'none',
+    cursor: 'pointer',
     '@media (min-width:767px)': {
       marginBottom: 'auto',
-      marginTop: '32px',
+      marginTop: '2.5rem',
     },
-  },
+  } as const,
   burger: {
-    '& span:first-child': {
+    '& span:first-of-type, & span:nth-of-type(3)': {
       width: '16px',
     },
-    '& span:nth-child(2)': {
+    '& span:nth-of-type(2)': {
       width: '32px',
-      marginTop: '8px',
-      marginBottom: '8px',
+      marginTop: '0.5rem',
+      marginBottom: '0.5rem',
     },
-    '& span:nth-child(3)': {
-      width: '16px',
+    '&:hover span:first-of-type, &:hover span:nth-of-type(3)': {
+      width: '32px',
     },
   },
   close: {
-    '& span:first-child': {
+    '& span:first-of-type': {
       width: '32px',
       transform: 'rotate(45deg)',
     },
-    '& span:nth-child(2)': {
+    '& span:nth-of-type(2)': {
       width: '32px',
       opacity: 0,
     },
-    '& span:nth-child(3)': {
+    '& span:nth-of-type(3)': {
       width: '32px',
       transform: 'rotate(-45deg)',
     },
@@ -71,6 +75,7 @@ const styles = {
     height: '2px',
     background: theme.colors.primary,
     transformOrigin: '13px',
+    borderRadius: '2px',
     transition: 'all 0.3s linear',
   }),
 };

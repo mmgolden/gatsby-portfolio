@@ -5,6 +5,7 @@ import './normalize.css';
 import { ThemeProvider } from 'emotion-theming';
 import { Navigation } from './Navigation';
 import { theme } from '../base/theme';
+import './layout.css';
 
 export const Layout: React.FC = ({ children }) => {
   return (
@@ -20,12 +21,11 @@ export const Layout: React.FC = ({ children }) => {
 const styles = {
   wrapper: {
     display: 'flex',
-    flexDirection: 'column' as const,
-    boxSizing: 'border-box' as const,
+    flexDirection: 'column',
     '@media (min-width:767px)': {
-      flexDirection: 'row' as const,
+      flexDirection: 'row',
     },
-  },
+  } as const,
   main: {
     flex: 1,
   },
