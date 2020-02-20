@@ -18,9 +18,11 @@ export const Navigation: React.FC = () => {
           <Logo css={styles.logo} />
         </Link>
         <Burger isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-        <Social />
+        <div css={styles.social}>
+          <Social />
+        </div>
       </div>
-      <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <Menu isMenuOpen={isMenuOpen} />
     </nav>
   );
 };
@@ -50,5 +52,11 @@ const styles = {
     } as const),
   logo: {
     width: '32px',
+  },
+  social: {
+    display: 'none',
+    '@media (min-width:767px)': {
+      display: 'block',
+    },
   },
 };

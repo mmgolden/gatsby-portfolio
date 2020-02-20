@@ -9,7 +9,7 @@ import { Theme } from '../base/theme';
 export const Social: React.FC = () => {
   return (
     <ul css={styles.social}>
-      <li>
+      <li css={styles.listItem}>
         <a
           href="https://github.com/mmgolden"
           target="_blank"
@@ -20,7 +20,7 @@ export const Social: React.FC = () => {
           <Github css={styles.icon} />
         </a>
       </li>
-      <li>
+      <li css={styles.listItem}>
         <a
           href="https://www.linkedin.com/in/melindamgolden"
           target="_blank"
@@ -31,7 +31,7 @@ export const Social: React.FC = () => {
           <Linkedin css={styles.icon} />
         </a>
       </li>
-      <li>
+      <li css={styles.listItem}>
         <a
           href="https://twitter.com/melindamgolden"
           target="_blank"
@@ -48,19 +48,25 @@ export const Social: React.FC = () => {
 
 const styles = {
   social: {
-    display: 'none',
+    listStyle: 'none',
+    paddingLeft: 0,
+    textAlign: 'center',
+  } as const,
+  listItem: {
+    display: 'inline-block',
     '@media (min-width:767px)': {
       display: 'block',
-      listStyle: 'none',
-      paddingLeft: 0,
     },
   },
   link: {
     outline: 'none',
     display: 'block',
-    padding: '4px',
+    padding: '16px',
     '&:hover svg': {
       transform: 'scale(1.2)',
+    },
+    '@media (min-width:767px)': {
+      padding: '4px',
     },
   },
   icon: (theme: Theme) => ({

@@ -3,13 +3,13 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { Link } from 'react-scroll';
 import { Theme } from '../base/theme';
+import { Social } from './Social';
 
 interface Props {
   isMenuOpen: boolean;
-  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const Menu: React.FC<Props> = ({ isMenuOpen, setIsMenuOpen }) => {
+export const Menu: React.FC<Props> = ({ isMenuOpen }) => {
   return (
     <div css={isMenuOpen ? styles.menuOpen : styles.menuClosed}>
       <ul css={styles.menu}>
@@ -34,6 +34,9 @@ export const Menu: React.FC<Props> = ({ isMenuOpen, setIsMenuOpen }) => {
           </Link>
         </li>
       </ul>
+      <div css={styles.social}>
+        <Social />
+      </div>
     </div>
   );
 };
@@ -50,6 +53,8 @@ const styles = {
       left: 0,
       right: 0,
       zIndex: 9,
+      display: 'flex',
+      flexDirection: 'column',
       '& a': {
         opacity: 1,
       },
@@ -108,4 +113,13 @@ const styles = {
       color: theme.colors.primary,
     },
   }),
+  social: {
+    marginTop: 'auto',
+    marginBottom: '16px',
+    '@media (min-width:767px)': {
+      display: 'none',
+      marginTop: 0,
+      marginBottom: 0,
+    },
+  },
 };
