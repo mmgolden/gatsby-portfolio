@@ -24,16 +24,13 @@ const styles = {
       display: 'flex',
       backgroundColor: theme.colors.primary,
       height: '100vh',
-      marginTop: '3.25rem',
-      padding: '0.75rem',
+      padding: '1.25rem',
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
       position: 'relative',
       '@media (min-width:767px)': {
         flexDirection: 'row',
-        marginTop: 0,
-        marginLeft: '4.5rem',
         padding: '2rem 3.875rem',
       },
     } as const),
@@ -57,7 +54,7 @@ const styles = {
     } as const),
   heroText: (theme: Theme) => ({
     fontFamily: theme.fonts.heading,
-    fontSize: '1.8rem',
+    fontSize: '1.75rem',
     lineHeight: 1.4,
     margin: 0,
     '@media (min-width:992px)': {

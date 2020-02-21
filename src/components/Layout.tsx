@@ -28,5 +28,10 @@ const styles = {
   } as const,
   main: {
     flex: 1,
+    marginTop: '3.25rem',
+    '@media (min-width:767px)': {
+      marginTop: 0,
+      marginLeft: '4.5rem',
+    },
   },
 };

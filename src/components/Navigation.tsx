@@ -42,6 +42,7 @@ const styles = {
       left: 0,
       right: 0,
       '@media (min-width:767px)': {
+        position: 'fixed',
         flexDirection: 'column',
         width: '72px',
         right: 'auto',
