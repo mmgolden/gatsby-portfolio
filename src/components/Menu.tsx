@@ -45,7 +45,7 @@ const styles = {
   menuOpen: (theme: Theme) =>
     ({
       background: theme.colors.white,
-      position: 'absolute',
+      position: 'fixed',
       height: '100vh',
       padding: '2rem 3.875rem',
       transition: 'transform 0.5s ease-in-out',
@@ -67,7 +67,7 @@ const styles = {
   menuClosed: (theme: Theme) =>
     ({
       background: theme.colors.white,
-      position: 'absolute',
+      position: 'fixed',
       height: '100vh',
       padding: '2rem 3.875rem',
       transition: 'transform 0.5s ease-in-out',
