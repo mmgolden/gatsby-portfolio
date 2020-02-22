@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx } from '@emotion/core';
-import { Link } from 'react-scroll';
+import { Link } from 'gatsby';
 import { Theme } from '../base/theme';
 import { Social } from './Social';
 
