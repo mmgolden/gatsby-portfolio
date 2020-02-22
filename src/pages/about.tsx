@@ -12,13 +12,12 @@ const AboutPage: React.FC = () => {
       <SEO />
       <div css={styles.container}>
         <div css={styles.content}>
-          <h1 css={styles.heading}>About</h1>
-          <p css={styles.text}>
-            For the last year, I have been building software with React, Apollo
-            and GraphQL. Recently I have adopted TypeScript. I’ve had the
-            opportunity to design and develop my own features. On the side, I
-            have taught myself how to build cross-platform mobile apps with
-            React Native.
+          <p css={styles.intro}>
+            I'm Melinda. For the last year, I have been building software with
+            React, Apollo and GraphQL. Recently I have adopted TypeScript. I’ve
+            had the opportunity to design and develop my own features. On the
+            side, I have taught myself how to build cross-platform mobile apps
+            with React Native.
           </p>
           <p css={styles.text}>
             What I enjoy about development is bringing together design with
@@ -55,29 +54,29 @@ const AboutPage: React.FC = () => {
 const styles = {
   container: {
     display: 'flex',
+    flexDirection: 'column',
     padding: '1.25rem',
     '@media (min-width:767px)': {
-      padding: '2rem 3.875rem',
+      padding: '6rem 3.875rem 3.875rem 3.875rem',
     },
-  },
+    '@media (min-width:992px)': {
+      flexDirection: 'row',
+    },
+  } as const,
   content: {
-    '@media (min-width:767px)': {
+    '@media (min-width:992px)': {
       flex: 1,
     },
-  },
-  heading: (theme: Theme) => ({
-    color: theme.colors.heading,
-    fontWeight: 400,
-    margin: '0 0 1.5rem 0',
-    fontSize: '2rem',
-    '&:after': {
-      content: `''`,
-      display: 'block',
-      width: 148,
-      height: 2,
-      background: theme.colors.primary,
-      marginTop: '0.75rem',
+    '@media (min-width:1200px)': {
+      flex: 2,
     },
+  },
+  intro: (theme: Theme) => ({
+    fontFamily: theme.fonts.heading,
+    color: theme.colors.heading,
+    fontSize: '1.5rem',
+    margin: '0 0 1rem 0',
+    lineHeight: 1.5,
   }),
   text: (theme: Theme) => ({
     color: theme.colors.primaryFont,
@@ -87,9 +86,10 @@ const styles = {
   }),
   image: {
     flex: 1,
-    padding: '2rem 0 0 3rem',
+    padding: '0 0 0 3rem',
     '& img': {
       width: '100%',
+      borderRadius: 2,
     },
   },
 };
