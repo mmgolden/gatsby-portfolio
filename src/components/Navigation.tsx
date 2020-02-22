@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'gatsby';
 import { jsx } from '@emotion/core';
 import { Theme } from '../base/theme';
@@ -10,9 +10,25 @@ import { Menu } from './Menu';
 
 export const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigationRef = useRef<HTMLElement>(null);
+
+  const handleClick = (e: MouseEvent) => {
+    if (
+      navigationRef.current &&
+      !navigationRef.current.contains(e.target as Node)
+    ) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClick);
+
+    return () => document.addEventListener('click', handleClick);
+  }, []); // eslint-disable-line
 
   return (
-    <nav>
+    <nav ref={navigationRef}>
       <div css={styles.navbar}>
         <Link to="/" aria-label="Logo">
           <Logo css={styles.logo} />
