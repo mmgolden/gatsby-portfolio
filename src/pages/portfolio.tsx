@@ -77,8 +77,10 @@ const styles = {
   },
   imageContainer: {
     flex: 1,
+    marginBottom: '1.5rem',
     '@media (min-width:992px)': {
       paddingRight: '3rem',
+      marginBottom: 0,
     },
   },
   image: {
