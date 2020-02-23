@@ -63,7 +63,11 @@ const PortfolioPage: React.FC = () => {
         {portfolioItems.map((item: Portfolio) => (
           <div css={styles.portfolioItem} key={item.id}>
             <div css={styles.imageContainer}>
-              <Img fluid={item.image.childImageSharp.fluid} alt={item.title} />
+              <Img
+                fluid={item.image.childImageSharp.fluid}
+                alt={item.title}
+                style={styles.image}
+              />
             </div>
             <div css={styles.contentContainer}>
               <div css={styles.description}>
@@ -127,7 +131,6 @@ const styles = {
     },
   },
   image: {
-    width: '100%',
     borderRadius: 2,
   },
   description: {
