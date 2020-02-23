@@ -120,7 +120,7 @@ const AboutPage: React.FC = () => {
           </div>
           <div css={styles.skills}>
             <h2 css={styles.heading}>Skills</h2>
-            <div style={{ display: 'flex' }}>
+            <div css={styles.flexContainer}>
               <ul css={styles.list}>
                 <li>React</li>
                 <li>React Native</li>
@@ -149,6 +149,9 @@ const AboutPage: React.FC = () => {
 };
 
 const styles = {
+  flexContainer: {
+    display: 'flex',
+  },
   pageContainer: {
     padding: '1.25rem',
     '@media (min-width:767px)': {
