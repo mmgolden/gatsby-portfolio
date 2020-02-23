@@ -5,6 +5,7 @@ import { Layout } from '../components/Layout';
 import { SEO } from '../components/Seo';
 import { Theme } from '../base/theme';
 import headshot from '../images/headshot.jpg';
+import { LinkButton } from '../components/LinkButton';
 
 const AboutPage: React.FC = () => {
   return (
@@ -138,9 +139,7 @@ const AboutPage: React.FC = () => {
                 <li>GraphQL</li>
               </ul>
             </div>
-            <button type="button" css={styles.downloadButton}>
-              Download resume →
-            </button>
+            <LinkButton text="Download resume" action={() => {}} />
           </div>
         </div>
       </div>
@@ -249,16 +248,6 @@ const styles = {
     margin: '0 0 1rem 0',
     fontSize: '0.875rem',
     opacity: 0.7,
-  }),
-  downloadButton: (theme: Theme) => ({
-    color: theme.colors.primary,
-    background: 'none',
-    border: 'none',
-    cursor: 'pointer',
-    padding: 0,
-    '&:hover, &:focus': {
-      textDecoration: 'underline',
-    },
   }),
 };
 
