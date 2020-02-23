@@ -1,9 +1,23 @@
 html {
   box-sizing: border-box;
   font-size: 16px;
+  font-family: 'Fauna One', sans-serif;
 }
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+body {
+  background: #f2f7f7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Playfair Display', serif;
 }
