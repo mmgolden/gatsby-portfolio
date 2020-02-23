@@ -101,8 +101,13 @@ const styles = {
   portfolioItem: {
     display: 'flex',
     flexDirection: 'column',
+    marginBottom: '4rem',
     '@media (min-width:992px)': {
       flexDirection: 'row',
+      marginBottom: '6rem',
+    },
+    '&:last-of-type': {
+      marginBottom: 0,
     },
   } as const,
   contentContainer: {
