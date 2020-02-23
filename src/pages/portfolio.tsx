@@ -2,21 +2,26 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import { useStaticQuery, graphql } from 'gatsby';
+import Img, { FluidObject } from 'gatsby-image';
 import { Layout } from '../components/Layout';
 import { SEO } from '../components/Seo';
 import { Theme } from '../base/theme';
 import { LinkButton } from '../components/LinkButton';
 import { extractNodes } from '../base/utils/extractNodes';
 
-interface Image {
-  publicURL: string;
+interface Fluid {
+  fluid: FluidObject;
+}
+
+interface ChildImageSharp {
+  childImageSharp: Fluid;
 }
 
 interface Portfolio {
   id: string;
   title: string;
   description: string;
-  image: Image;
+  image: ChildImageSharp;
   technology: string[];
   github: string;
   live: string;
@@ -33,7 +38,11 @@ const PortfolioPage: React.FC = () => {
               title
               description
               image {
-                publicURL
+                childImageSharp {
+                  fluid {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
               }
               technology
               github
@@ -54,11 +63,7 @@ const PortfolioPage: React.FC = () => {
         {portfolioItems.map((item: Portfolio) => (
           <div css={styles.portfolioItem} key={item.id}>
             <div css={styles.imageContainer}>
-              <img
-                src={item.image.publicURL}
-                alt={item.title}
-                css={styles.image}
-              />
+              <Img fluid={item.image.childImageSharp.fluid} alt={item.title} />
             </div>
             <div css={styles.contentContainer}>
               <div css={styles.description}>
