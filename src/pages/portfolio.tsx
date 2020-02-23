@@ -1,58 +1,91 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx } from '@emotion/core';
-import { navigate } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import { Layout } from '../components/Layout';
 import { SEO } from '../components/Seo';
-import gatsbyPortfolio from '../images/gatsby-portfolio.png';
 import { Theme } from '../base/theme';
 import { LinkButton } from '../components/LinkButton';
+import { extractNodes } from '../base/utils/extractNodes';
+
+interface Image {
+  publicURL: string;
+}
+
+interface Portfolio {
+  id: string;
+  title: string;
+  description: string;
+  image: Image;
+  technology: string[];
+  github: string;
+  live: string;
+}
 
 const PortfolioPage: React.FC = () => {
+  const { allPortfolioJson } = useStaticQuery(
+    graphql`
+      query {
+        allPortfolioJson {
+          edges {
+            node {
+              id
+              title
+              description
+              image {
+                publicURL
+              }
+              technology
+              github
+              live
+            }
+          }
+        }
+      }
+    `
+  );
+
+  const portfolioItems = extractNodes<Portfolio>(allPortfolioJson.edges);
+
   return (
     <Layout>
       <SEO title="Portfolio" />
       <div css={styles.pageContainer}>
-        <div css={styles.portfolioItem}>
-          <div css={styles.imageContainer}>
-            <img
-              src={gatsbyPortfolio}
-              alt="Gatsby portfolio"
-              css={styles.image}
-            />
-          </div>
-          <div css={styles.contentContainer}>
-            <div css={styles.description}>
-              <h2 css={styles.descriptionTitle}>Gatsby Portfolio</h2>
-              <p css={styles.text}>
-                I built my portfolio website with Gatsby. The purpose of this
-                website is to showcase the projects I have created. I chose
-                Gatsby because I was interested in learning about it and I liked
-                that I could use React.
-              </p>
-            </div>
-            <div css={styles.technologyContainer}>
-              <h3 css={styles.technologyTitle}>Technology</h3>
-              <ul css={styles.technologyList}>
-                <li>Gatsby</li>
-                <li>Emotion</li>
-                <li>TypeScript</li>
-              </ul>
-            </div>
-            <div css={styles.buttonContainer}>
-              <LinkButton
-                text="View on Github"
-                action={() =>
-                  window.open(
-                    'https://github.com/mmgolden/gatsby-portfolio',
-                    '_blank'
-                  )
-                }
+        {portfolioItems.map((item: Portfolio) => (
+          <div css={styles.portfolioItem} key={item.id}>
+            <div css={styles.imageContainer}>
+              <img
+                src={item.image.publicURL}
+                alt={item.title}
+                css={styles.image}
               />
-              <LinkButton text="View live" action={() => navigate('/')} />
+            </div>
+            <div css={styles.contentContainer}>
+              <div css={styles.description}>
+                <h2 css={styles.descriptionTitle}>{item.title}</h2>
+                <p css={styles.text}>{item.description}</p>
+              </div>
+              <div css={styles.technologyContainer}>
+                <h3 css={styles.technologyTitle}>Technology</h3>
+                <ul css={styles.technologyList}>
+                  {item.technology.map(item => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div css={styles.buttonContainer}>
+                <LinkButton
+                  text="View on Github"
+                  action={() => window.open(`${item.github}`, '_blank')}
+                />
+                <LinkButton
+                  text="View live"
+                  action={() => window.open(`${item.live}`, '_blank')}
+                />
+              </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </Layout>
   );

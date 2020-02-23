@@ -1,0 +1,10 @@
+[
+  {
+    "image": "./images/gatsby-portfolio.png",
+    "title": "Gatsby Portfolio",
+    "description": "I built my portfolio website with Gatsby. The purpose of this website is to showcase the projects I have created. I chose Gatsby because I was interested in learning about it and I liked that I could use React.",
+    "technology": ["Gatsby", "Emotion", "TypeScript"],
+    "github": "https://github.com/mmgolden/gatsby-portfolio",
+    "live": "https://melindagolden.com"
+  }
+]
