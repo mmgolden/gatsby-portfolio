@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Software Engineer",
+    "company": "Level Software, Advanced Data & Network Solutions",
+    "timeline": "2019 - Present",
+    "description": "Advanced Data & Network Solutions is a MSP that founded a startup, Level Software, which focuses on software for IT professionals. As a developer, I built front end applications using React, Apollo, GraphQL, and TypeScript. In order to increase confidence in our code, I implemented integration tests using React Testing Library with Jest and end-to-end tests with Cypress. I used Git for version control and completed code reviews. To collaborate effectively with the team, I communicated through Slack."
+  },
+  {
+    "title": "Web Developer - Remote",
+    "company": "Rubix",
+    "timeline": "2016 - 2019",
+    "description": "I built approximately 300 responsive, static websites using HTML, CSS, and Bootstrap templates. Some of those websites were created with WordPress by customizing themes. On average each month, I responded to over 400 support tickets in our CMS and updated websites for our clients. I edited logos and images with Photoshop and Illustrator. The company sent me all over the country to take pictures and videos of events for our clients. We used Asana to keep track of projects."
+  },
+  {
+    "title": "Marketing Manager",
+    "company": "Georgia Oral & Facial Surgery",
+    "timeline": "2014 - 2016",
+    "description": "The websites for the doctors were out of date so I designed new WordPress websites by customizing themes with CSS. Website traffic was increased by writing blog posts, SEO, and posting to social media. I created and managed their Facebook ads. MailChimp was used to create email campaigns. I designed promotional flyers, postcards, brochures, and banners with Photoshop, Illustrator, and InDesign."
+  },
+  {
+    "title": "Owner/Photographer",
+    "company": "Golden Photography, LLC",
+    "timeline": "2012 - 2016",
+    "description": "I generated leads through our website that was built by customizing a WordPress theme with CSS. I photographed weddings, engagements, headshots, and products. Images were edited and re-touched with Lightroom and Photoshop."
+  }
+]

@@ -30,6 +30,9 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/camelcase': 0,
     '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/no-use-before-define': 0,
+    'react/no-unescaped-entities': 0,
+    '@typescript-eslint/no-empty-function': 0,
   },
   overrides: [
     // Override some TypeScript rules just for .js files
