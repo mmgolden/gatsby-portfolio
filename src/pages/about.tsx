@@ -92,7 +92,7 @@ const AboutPage: React.FC = () => {
         <div css={styles.container}>
           <div css={styles.firstColumn}>
             <h2 css={styles.heading}>Work Experience</h2>
-            {workExperience.map((job: any) => (
+            {workExperience.map((job: Job) => (
               <div css={styles.job} key={job.id}>
                 <h3 css={styles.jobTitle}>{job.title}</h3>
                 <div css={styles.companyContainer}>
