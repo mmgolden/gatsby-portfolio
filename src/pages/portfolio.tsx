@@ -2,20 +2,13 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img, { FluidObject } from 'gatsby-image';
+import Img from 'gatsby-image';
 import { Layout } from '../components/Layout';
 import { SEO } from '../components/Seo';
 import { Theme } from '../base/theme';
 import { LinkButton } from '../components/LinkButton';
 import { extractNodes } from '../base/utils/extractNodes';
-
-interface Fluid {
-  fluid: FluidObject;
-}
-
-interface ChildImageSharp {
-  childImageSharp: Fluid;
-}
+import { ChildImageSharp } from '../typings/image';
 
 interface Portfolio {
   id: string;

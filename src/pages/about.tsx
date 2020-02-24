@@ -4,120 +4,104 @@ import { jsx } from '@emotion/core';
 import { Layout } from '../components/Layout';
 import { SEO } from '../components/Seo';
 import { Theme } from '../base/theme';
-import headshot from '../images/headshot.jpg';
+import Img from 'gatsby-image';
 import { LinkButton } from '../components/LinkButton';
+import { extractNodes } from '../base/utils/extractNodes';
+import { useStaticQuery, graphql } from 'gatsby';
+import { ChildImageSharp } from '../typings/image';
+
+interface About {
+  image: ChildImageSharp;
+  description: string[];
+}
+
+interface Job {
+  id: string;
+  title: string;
+  company: string;
+  timeline: string;
+  description: string;
+}
 
 const AboutPage: React.FC = () => {
+  const { allAboutJson, allWorkExperienceJson } = useStaticQuery(
+    graphql`
+      query {
+        allAboutJson {
+          edges {
+            node {
+              image {
+                childImageSharp {
+                  fluid {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              description
+            }
+          }
+        }
+        allWorkExperienceJson {
+          edges {
+            node {
+              id
+              title
+              company
+              timeline
+              description
+            }
+          }
+        }
+      }
+    `
+  );
+
+  const about: About[] = extractNodes<About>(allAboutJson.edges);
+  const workExperience = extractNodes<Job>(allWorkExperienceJson.edges);
+
   return (
     <Layout>
       <SEO title="About" />
       <div css={styles.pageContainer}>
         <div css={styles.container}>
           <div css={styles.firstColumn}>
-            <h1 css={styles.intro}>
-              I'm Melinda. For the last year, I have been building software with
-              React, Apollo and GraphQL. Recently I have adopted TypeScript.
-              I’ve had the opportunity to design and develop my own features. On
-              the side, I have taught myself how to build cross-platform mobile
-              apps with React Native.
-            </h1>
-            <p css={styles.text}>
-              What I enjoy about development is bringing together design with
-              code. For me, there isn’t a better feeling than creating something
-              from nothing. I get excited about coding a beautiful UI and I can
-              honestly say that I love CSS. That’s why I specialize in front-end
-              development.
-            </p>
-            <p css={styles.text}>
-              Before I got into software, I worked for a web design company for
-              three years building websites with HTML, CSS, and JavaScript or
-              with WordPress. While working full time, I was growing my skills
-              as a developer. Previously I was a marketing manager for a group
-              of surgeons. After graduating from art school, I ran my own
-              photography business.
-            </p>
-            <p css={styles.text}>
-              While I spend much of my free time learning, I also regularly
-              attend local tech meetups. I have volunteered to give
-              presentations about JavaScript and share my knowledge with other
-              developers. Along with other women leaders, I helped re-launch the
-              women in tech meetup in Asheville. Besides coding, I enjoy
-              traveling, hiking, and photography.
-            </p>
+            {about[0].description.map((text, index) => {
+              if (index === 0) {
+                return (
+                  <h1 css={styles.intro} key={index}>
+                    {text}
+                  </h1>
+                );
+              }
+
+              return (
+                <p css={styles.text} key={index}>
+                  {text}
+                </p>
+              );
+            })}
           </div>
           <div css={styles.image}>
-            <img src={headshot} alt="Melinda Golden" />
+            <Img
+              fluid={about[0].image.childImageSharp.fluid}
+              alt="Melinda Golden"
+              style={styles.image}
+            />
           </div>
         </div>
         <div css={styles.container}>
           <div css={styles.firstColumn}>
             <h2 css={styles.heading}>Work Experience</h2>
-            <div css={styles.job}>
-              <h3 css={styles.jobTitle}>Software Engineer</h3>
-              <div css={styles.companyContainer}>
-                <p css={styles.company}>
-                  Level Software, Advanced Data & Network Solutions
-                </p>
-                <p css={styles.company}>2019 - Present</p>
+            {workExperience.map((job: any) => (
+              <div css={styles.job} key={job.id}>
+                <h3 css={styles.jobTitle}>{job.title}</h3>
+                <div css={styles.companyContainer}>
+                  <p css={styles.company}>{job.company}</p>
+                  <p css={styles.company}>{job.timeline}</p>
+                </div>
+                <p css={styles.text}>{job.description}</p>
               </div>
-              <p css={styles.text}>
-                Advanced Data & Network Solutions is a MSP that founded a
-                startup, Level Software, which focuses on software for IT
-                professionals. As a developer, I built front end applications
-                using React, Apollo, GraphQL, and TypeScript. In order to
-                increase confidence in our code, I implemented integration tests
-                using React Testing Library with Jest and end-to-end tests with
-                Cypress. I used Git for version control and completed code
-                reviews. To collaborate effectively with the team, I
-                communicated through Slack.
-              </p>
-            </div>
-            <div css={styles.job}>
-              <h3 css={styles.jobTitle}>Web Developer - Remote</h3>
-              <div css={styles.companyContainer}>
-                <p css={styles.company}>Rubix</p>
-                <p css={styles.company}>2016 - 2019</p>
-              </div>
-              <p css={styles.text}>
-                I built approximately 300 responsive, static websites using
-                HTML, CSS, and Bootstrap templates. Some of those websites were
-                created with WordPress by customizing themes. On average each
-                month, I responded to over 400 support tickets in our CMS and
-                updated websites for our clients. I edited logos and images with
-                Photoshop and Illustrator. The company sent me all over the
-                country to take pictures and videos of events for our clients.
-                We used Asana to keep track of projects.
-              </p>
-            </div>
-            <div css={styles.job}>
-              <h3 css={styles.jobTitle}>Marketing Manager</h3>
-              <div css={styles.companyContainer}>
-                <p css={styles.company}>Georgia Oral & Facial Surgery</p>
-                <p css={styles.company}>2014 - 2016</p>
-              </div>
-              <p css={styles.text}>
-                The websites for the doctors were out of date so I designed new
-                WordPress websites by customizing themes with CSS. Website
-                traffic was increased by writing blog posts, SEO, and posting to
-                social media. I created and managed their Facebook ads.
-                MailChimp was used to create email campaigns. I designed
-                promotional flyers, postcards, brochures, and banners with
-                Photoshop, Illustrator, and InDesign.
-              </p>
-            </div>
-            <div css={styles.job}>
-              <h3 css={styles.jobTitle}>Owner/Photographer</h3>
-              <div css={styles.companyContainer}>
-                <p css={styles.company}>Golden Photography, LLC</p>
-                <p css={styles.company}>2012 - 2016</p>
-              </div>
-              <p css={styles.text}>
-                I generated leads through our website that was built by
-                customizing a WordPress theme with CSS. I photographed weddings,
-                engagements, headshots, and products. Images were edited and
-                re-touched with Lightroom and Photoshop.
-              </p>
-            </div>
+            ))}
           </div>
           <div css={styles.skills}>
             <h2 css={styles.heading}>Skills</h2>
