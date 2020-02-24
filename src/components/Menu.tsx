@@ -29,7 +29,7 @@ export const Menu: React.FC<Props> = ({ isMenuOpen }) => {
           </Link>
         </li>
         <li css={styles.menuItem}>
-          <Link to="/" css={styles.menuLink}>
+          <Link to="/contact" css={styles.menuLink}>
             Contact
           </Link>
         </li>
