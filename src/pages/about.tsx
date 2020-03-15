@@ -32,7 +32,7 @@ const AboutPage: React.FC = () => {
             node {
               image {
                 childImageSharp {
-                  fluid {
+                  fluid(quality: 100) {
                     ...GatsbyImageSharpFluid
                   }
                 }

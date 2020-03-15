@@ -32,7 +32,7 @@ const PortfolioPage: React.FC = () => {
               description
               image {
                 childImageSharp {
-                  fluid {
+                  fluid(quality: 100) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -80,10 +80,12 @@ const PortfolioPage: React.FC = () => {
                   text="View on Github"
                   action={() => window.open(`${item.github}`, '_blank')}
                 />
-                <LinkButton
-                  text="View live"
-                  action={() => window.open(`${item.live}`, '_blank')}
-                />
+                {item.live && (
+                  <LinkButton
+                    text="View live"
+                    action={() => window.open(`${item.live}`, '_blank')}
+                  />
+                )}
               </div>
             </div>
           </div>

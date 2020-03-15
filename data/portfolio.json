@@ -1,5 +1,12 @@
 [
   {
+    "image": "./images/grist-test.png",
+    "title": "Grist Test",
+    "description": "This is a brewery app built with React Native and AWS AppSync. Grist analysis is the process of using stacked sieves with varying meshes to test malt output after milling (crushing the grain).",
+    "technology": ["React Native", "TypeScript", "Apollo", "AWS AppSync"],
+    "github": "https://github.com/mmgolden/grist-test"
+  },
+  {
     "image": "./images/gatsby-portfolio.png",
     "title": "Gatsby Portfolio",
     "description": "I built my portfolio website with Gatsby. The purpose of this website is to showcase the projects I have created. I chose Gatsby because I was interested in learning about it and I liked that I could use React.",
