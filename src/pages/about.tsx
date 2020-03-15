@@ -32,7 +32,7 @@ const AboutPage: React.FC = () => {
             node {
               image {
                 childImageSharp {
-                  fluid {
+                  fluid(quality: 100) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -123,7 +123,15 @@ const AboutPage: React.FC = () => {
                 <li>GraphQL</li>
               </ul>
             </div>
-            <LinkButton text="Download resume" action={() => {}} />
+            <LinkButton
+              text="Download resume"
+              action={() =>
+                window.open(
+                  'https://melindagolden.com/MelindaGolden.pdf',
+                  '_blank'
+                )
+              }
+            />
           </div>
         </div>
       </div>
